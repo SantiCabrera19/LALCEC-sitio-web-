@@ -1,4 +1,5 @@
-1- Primero crearas una carpeta donde quieras.
+﻿1- Primero crearas una carpeta donde quieras que sea el deposito de tus repositorios locales.
+	A. No importa la ubicacion de la Carpeta, puede ser en el escritorio o donde tengas tus apuntes
 
 2- Dentro de esa carpeta haces segundo clic y le das a clic Git Bash Here.
 
@@ -10,4 +11,27 @@
 5- Luego de eso vas a poner el siguiente comando: <git remote add Grupo2Repo https://github.com/SantiCabrera19/Grupo2-ProyectoFinal> sin los "<>".
 
 6- Ahora ponemos este otro: <git pull> sin los "<>".
-	A- Si te salió esto: 
+	A- Saldrá Esto: 
+
+remote: Enumerating objects: 88, done.
+remote: Counting objects: 100% (88/88), done.
+remote: Compressing objects: 100% (61/61), done.
+remote: Total 88 (delta 11), reused 40 (delta 6), pack-reused 0
+Unpacking objects: 100% (88/88), 17.26 KiB | 5.00 KiB/s, done.
+From https://github.com/SantiCabrera19/Grupo2-ProyectoFinal
+ * [new branch]      Principal  -> Grupo2Repo/Principal
+ * [new branch]      master     -> Grupo2Repo/master
+There is no tracking information for the current branch.
+Please specify which branch you want to merge with.
+See git-pull(1) for details.
+
+    git pull <remote> <branch>
+
+If you wish to set tracking information for this branch you can do so with:
+
+    git branch --set-upstream-to=Grupo2Repo/<branch> master
+
+7- A continuacion ponen <git pull Grupo2Repo master> sin "<>"
+	A- Saldrá:
+
+	
