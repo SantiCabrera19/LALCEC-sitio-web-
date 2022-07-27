@@ -34,4 +34,82 @@ If you wish to set tracking information for this branch you can do so with:
 7- A continuacion ponen <git pull Grupo2Repo master> sin "<>"
 	A- Saldrá:
 
+remote: Enumerating objects: 3, done.
+remote: Counting objects: 100% (3/3), done.
+remote: Compressing objects: 100% (1/1), done.
+remote: Total 2 (delta 1), reused 2 (delta 1), pack-reused 0
+Unpacking objects: 100% (2/2), 224 bytes | 28.00 KiB/s, done.
+From https://github.com/SantiCabrera19/Grupo2-ProyectoFinal
+   a5df9f2..3784ab4  master     -> Grupo2Repo/master
+Updating a5df9f2..3784ab4
+Fast-forward
+ TutorialGit.py | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 TutorialGit.py
+
+8- Y si ven en su carpeta habra aparecido un archivo llamado "TutorialGit" y otro con nombre de tus compañeros, asi ya tienen los archivo en los que se estuvo trabajando, suponiendo que este es uno
+	A- Ahora, van a subir uno ustedes, uno .txt.
+
+9- En la misma carpeta Minimizando la consola creas un nuevo archivo, un blog de notas y les pones tu nombre.
+
+10- Bien, ya con el blog con tu nombre creado vamos a la consola y ponemos <git status> sin "<>"
+	A- Nos sale:
+
+On branch master
+Your branch is up to date with 'Grupo2Repo/master'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        santiago.txt
+
+	B- Esto significa que hay cambios que commitear, es decir cambios que subir y es nuestro archivo, en mi caso santiago.txt pero seria tu nombre.
+
+11- Ahora ponemos en la consola el siguiente comando: <git add santiago.txt> sin "<>" recuerda que sera tu nombre en tu caso.
+	A- Podemos poner <git add santiago.txt> sin necesidad de poner git status antes, en este caso lo ponemos para aprender y ver lo que estamos haciendo.
+
+12- Luego de ejecutar <git add> no nos aparece nada, eso significa que todo va bien... Ahora si ponemos <git status> sin "<>" nos sale:
+
+On branch master
+Your branch is up to date with 'Grupo2Repo/master'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   santiago.txt
+
+	B- Esto Significa que ya podemos commitear el archivo que acabamos de crear y subirlo de tu repositorio local al repositorio remoto.
+		a. Recuerda que si quieres puedes proceder luego del <git add> sin colocar <git status> recomiendo usarlo hasta agarrarle la mano a los pasos.
+
+13- Entonces, procedemos a hacer el commit, para ello ejecutamos: <git commit santiago.txt -m "SubiendoGit"> sin "<>" presta atencion a los espacios.
+	A. Nos sale:
+
+[master 2503457] SubiendoGit
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 santiago.txt
+
+	A. Con esto ya esta en commit, listo para ser Pusheado, es decir, listo para subirse al repositorio remoto.
+
+14- Ahora para finalmente subir el archivo ponemos <git push Grupo2Repo>
+	A. Nos sale: 
+
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Delta compression using up to 2 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (2/2), 272 bytes | 272.00 KiB/s, done.
+Total 2 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/SantiCabrera19/Grupo2-ProyectoFinal
+   1dee8f4..2503457  master -> master
+
+15- Bien, ya se habrá subido el archivo con tu nombre al repositorio, compruebalo, ve al repositorio, recarga la pagina y ahi estará.
+
+
+
+
+
+
+
+
+
+
 	
