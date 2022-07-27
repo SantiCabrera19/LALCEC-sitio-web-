@@ -1,0 +1,13 @@
+1- Primero crearas una carpeta donde quieras.
+
+2- Dentro de esa carpeta haces segundo clic y le das a clic Git Bash Here.
+
+3- Se te va a abrir la consola de git, si es la primera ves y no te hiciste la cuenta vas a tener que hacerla, dejo al final como hacerla.
+
+4- Una vez allí ejecutaras el comando: <git init> sin los "<>" y en la carpeta se te habra creado una carpeta llamada ".git" .
+	A- sino la ves, tendras que poner la opcion "Ver elementos ocultos".
+
+5- Luego de eso vas a poner el siguiente comando: <git remote add Grupo2Repo https://github.com/SantiCabrera19/Grupo2-ProyectoFinal> sin los "<>".
+
+6- Ahora ponemos este otro: <git pull> sin los "<>".
+	A- Si te salió esto: 
