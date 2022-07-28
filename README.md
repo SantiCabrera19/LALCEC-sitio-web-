@@ -1,4 +1,5 @@
-> Proyecto Web llevado a cabo con el Framework 'Django' en la Comisión 4 del Informatorio
+> Proyecto Web llevado a cabo con el Framework 'Django'
+> Grupo 2
 
 **INTEGRANTES:**
 
