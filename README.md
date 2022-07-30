@@ -8,7 +8,7 @@
 3. Ivanna
 4. Santiago Robeff
 5. Horacio
-6. Dario
+6. Dario Romero
 7. Nicolas
 8. Adriana
 
