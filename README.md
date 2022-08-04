@@ -3,7 +3,7 @@
 
 **INTEGRANTES:**
 
-1. Andrea
+1. Andrea Kowtum -> aviso que no sigue el curso 4ago2022
 2. Santiago Cabrera
 3. Ivanna
 4. Santiago Robeff
@@ -11,4 +11,3 @@
 6. Dario Romero
 7. Nicolas
 8. Adriana
-
