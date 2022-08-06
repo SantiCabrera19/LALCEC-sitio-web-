@@ -10,4 +10,4 @@
 5. Horacio
 6. Dario Romero
 7. Nicolas
-8. Adriana
+8. Adriana -> aviso que no sigue el curso 6ago2022
