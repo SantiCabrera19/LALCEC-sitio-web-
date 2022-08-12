@@ -22,6 +22,12 @@ from blogapp import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index),
+    path('mama/', views.index1),
+    path('utero/', views.index2),
+    path('colon/', views.index3),
+    path('pulmon/', views.index4),
+    path('piel/', views.index5),
+    path('prostata/', views.index6),
 ]
 
 urlpatterns += staticfiles_urlpatterns()
