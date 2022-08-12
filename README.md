@@ -1,2 +1,4 @@
 # Grupo2-ProyectoFinal
-la noche la noche fue
+Integrantes:
+1. Santiago Cabrera
+2. Dario Romero
