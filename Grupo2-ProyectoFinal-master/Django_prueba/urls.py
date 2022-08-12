@@ -16,10 +16,8 @@ Including another URLconf
 
 from django.contrib import admin
 from django.urls import path
-from Libro import views
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('listar/', views.listar_todos),
-    path('detalle/<int:id>', views.filtrar_por_id),
 ]
