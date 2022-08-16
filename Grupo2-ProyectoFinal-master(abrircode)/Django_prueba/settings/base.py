@@ -77,12 +77,13 @@ WSGI_APPLICATION = 'Django_prueba.wsgi.application'
 
 DATABASES = {
    'default': {
-        'ENGINE' : 'django.db.backeds.postgresql_psycopg2',
-        'NAME' : 'mydb',
-        'USER' : 'postgres',
-        'PASSWORD' : 'password',
-        'HOST' : 'localhost',
-        'PORT' : 5432,
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'mydb',
+        'USER': 'postgres',
+        'PASSWORD': 'password',
+        'HOST': '127.0.0.1',
+        'PORT': '5432',
+
     }
 }
 
