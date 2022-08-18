@@ -2,4 +2,3 @@
 Integrantes:
 1. Santiago Cabrera
 2. Dario Romero
-3. Ivanna Vela
