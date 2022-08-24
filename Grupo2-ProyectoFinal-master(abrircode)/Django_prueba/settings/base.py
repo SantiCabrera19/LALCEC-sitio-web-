@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'allauth.socialaccount.providers.facebook',
     'django.contrib.sites',
     'crispy_forms',
+    'ckeditor',
     ]
 
 MIDDLEWARE = [
@@ -88,11 +89,11 @@ WSGI_APPLICATION = 'Django_prueba.wsgi.application'
 
 DATABASES = {
    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'mydb',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'funcionapls',
         'USER': 'postgres',
-        'PASSWORD': 'password',
-        'HOST': '127.0.0.1',
+        'PASSWORD': 'mane123',
+        'HOST': 'localhost',
         'PORT': '5432',
 
     }
@@ -157,3 +158,8 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 ACCOUNT_AUTHENTICATION_METHOD = 'email'
 ACCOUNT_EMAIL_REQUIRED=True
 
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': 'full',
+    },
+}
