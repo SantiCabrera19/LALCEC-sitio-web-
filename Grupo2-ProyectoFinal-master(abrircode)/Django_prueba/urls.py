@@ -1,7 +1,7 @@
-"""boostrap_blog URL Configuration
+"""lalcec URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/3.0/topics/http/urls/
+    https://docs.djangoproject.com/en/4.1/topics/http/urls/
 Examples:
 Function views
     1. Add an import:  from my_app import views
@@ -13,13 +13,15 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from xml.etree.ElementInclude import include
+from argparse import Namespace
 from django.contrib import admin
 from django.urls import path
+from django.urls import include
+from django.urls import path
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
-from django.contrib import admin
-from django.urls import include, path
-from blogapp import views
+from pagina import views
+
+Namespace = 'pagina'
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -30,8 +32,9 @@ urlpatterns = [
     path('pulmon/', views.index4),
     path('piel/', views.index5),
     path('prostata/', views.index6),
+    path('foro/', views.index7),
+    path('detallePost/<slug:slug>/', views.detallePost, name='detalle_post'),
     path('accounts/', include('allauth.urls')),
-
 ]
 urlpatterns += staticfiles_urlpatterns()
 
