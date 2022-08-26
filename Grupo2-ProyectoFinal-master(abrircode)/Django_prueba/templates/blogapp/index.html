@@ -23,6 +23,12 @@
 
 
 <body id="page-top">
+  <!--sdk facebook-->
+  <div id="fb-root"></div>
+  <script async defer crossorigin="anonymous" 
+    src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v14.0&appId=638697580937814&autoLogAppEvents=1" 
+    nonce="vZr2gkne">
+  </script>
 
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
@@ -336,8 +342,13 @@
                 <!-- Portfolio Modal - Image -->
                 <img class="img-fluid rounded mb-5" src="static/img/portfolio/cancermama.png" alt="">
                 <!-- Portfolio Modal - Text -->
-                <p class="mb-5">El cáncer de mamas es un padecimiento que puede desarrollarse en cualquier mujer, independientemente de su edad o nivel social. Para enfrentar una situación de salud de este tipo, las pacientes requieren mucho respaldo de su familia, amigos y seres queridos. Por eso, la motivación, el afecto, la comprensión, la empatía, son vitales porque ayudarán a asumir con positivismo y entusiasmo la cirugía, los tratamientos, terapias o cualquier otra indicación médica, lo que contribuirá a su mejoría.</p>
-                
+                <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
+                <!--comentario facebook-->
+                <div class="fb-comments" 
+                  data-href="http://127.0.0.1:8000/mama/" 
+                  data-width="100%" 
+                  data-numposts="5">
+                </div>
                 <!--Boton al link de la pagina-->
                 <form>
                   <a href="http://127.0.0.1:8000/mama/">
@@ -573,6 +584,7 @@
       </div>
     </div>
   </div>
+  
 
   <!-- Bootstrap core JavaScript -->
   <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
