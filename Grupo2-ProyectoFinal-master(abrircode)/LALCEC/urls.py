@@ -21,7 +21,6 @@ from django.urls import path
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from pagina import views
 
-Namespace = 'pagina'
 
 urlpatterns = [
     path('admin/', admin.site.urls),
