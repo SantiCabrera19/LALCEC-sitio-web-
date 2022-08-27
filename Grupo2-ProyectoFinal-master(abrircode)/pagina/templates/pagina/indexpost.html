@@ -61,19 +61,18 @@
               {% if posts %}
                 {% for post in posts %}
                   <div class="post-preview">
-                    <a href="{% url 'detalle_post' post.slug %}">
+                    <a href="{% url 'detalle_post' post.url %}">
+                      <h2 class="post-title">
+                        {{ post.titulo }}
+                      </h2>
                     </a>
-                        <h2 class="post-title">
-                          {{ post.titulo }}
-                        </h2>
-                        <h3 class="post-subtitle">
-                          {{ post.descripcion }}
-                        </h3>
-                    </a>
+                    <h3 class="post-subtitle">
+                      {{ post.descripcion }}
+                    </h3>
                     <p class="post-meta">
                         Publicado por
                         <strong>{{ post.autor }}</strong>
-                        {{ post.fecha_publicacion }}
+                        {{ post.creado }}
                     </p>
                   </div>
                 {% endfor %} 
@@ -133,8 +132,7 @@
             Lunes a Viernes 8:00 a 19:00hs
             
             Aráoz 2380, CABA, Argentina
-            
-            ​</p>
+          ​</p>
         </div>
 
       </div>

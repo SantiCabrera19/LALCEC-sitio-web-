@@ -32,7 +32,7 @@ urlpatterns = [
     path('piel/', views.index5),
     path('prostata/', views.index6),
     path('foro/', views.index7),
-    path('detallePost/<slug:slug>/', views.detallePost, name='detalle_post'),
+    path('post/<slug:url>/', views.DetallePost.as_view(), name='detalle_post'),
     path('accounts/', include('allauth.urls')),
 ]
 urlpatterns += staticfiles_urlpatterns()

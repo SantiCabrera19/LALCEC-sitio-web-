@@ -7,6 +7,7 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import logout
 from django.contrib.auth.forms import AuthenticationForm
 from .models import Post
+from django.views.generic import DetailView
 
 def index(request):
     return render(request, "pagina/index.html")
@@ -34,9 +35,10 @@ def index7(request):
     print(Post)
     return render(request, "pagina/indexpost.html",{"posts":posts})
 
-def detallePost(request,slug):
-    post = Post.objects.get(
-        slug = slug
-    )
-    print(post)
-    render(request, "post.html")
+class DetallePost(DetailView):
+    """Detalle del  post."""
+    template_name = 'post.html'
+    model = Post
+    context_object_name = 'post'
+    slug_field = 'url'
+    slug_url_kwarg = 'url'
