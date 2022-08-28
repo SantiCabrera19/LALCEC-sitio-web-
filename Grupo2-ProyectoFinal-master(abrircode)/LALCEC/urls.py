@@ -15,23 +15,21 @@ Including another URLconf
 """
 from argparse import Namespace
 from django.contrib import admin
-from django.urls import path
-from django.urls import include
-from django.urls import path
+from django.urls import path, include
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from pagina import views
 
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', views.index),
+    path('admin/', admin.site.urls, name='administrar'),
+    path('', views.index, name='inicio'),
     path('mama/', views.index1),
     path('utero/', views.index2),
     path('colon/', views.index3),
     path('pulmon/', views.index4),
     path('piel/', views.index5),
     path('prostata/', views.index6),
-    path('foro/', views.index7),
+    path('foro/', views.index7, name='lista_post'),
     path('post/<slug:url>/', views.DetallePost.as_view(), name='detalle_post'),
     path('accounts/', include('allauth.urls')),
 ]

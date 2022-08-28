@@ -23,12 +23,27 @@
 
 <body id="page-top">
 
+  <!--scrip para comentario facebook-->
+  <div id="fb-root"></div>
+  <script async defer crossorigin="anonymous" 
+    src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v14.0&appId=638697580937814&autoLogAppEvents=1" 
+    nonce="dxHfHo3Q">
+  </script>
+
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
     <div class="container">
-      <a class="navbar-brand js-scroll-trigger" href="http://127.0.0.1:8000"><img src="/pagina/static/img/lalceclogo.png" alt=""></a>
-      <button class="navbar-toggler navbar-toggler-right text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        Menu
+      <a class="navbar-brand js-scroll-trigger" 
+        href="{% url 'inicio'  %}">
+          <img src="{% static 'img/avataarsnobg.png' %}"  width="140" height="40"alt="icono">
+      </a>
+      <button class="navbar-toggler navbar-toggler-right text-uppercase font-weight-bold bg-primary text-white rounded" 
+        type="button" data-toggle="collapse" 
+        data-target="#navbarResponsive" 
+        aria-controls="navbarResponsive" 
+        aria-expanded="false" 
+        aria-label="Toggle navigation">
+          Menu
         <i class="fas fa-bars"></i>
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
@@ -38,89 +53,49 @@
           </li>
           
           <li class="nav-item mx-0 mx-lg-1">
-            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#contact">SAENZ PEÑA</a>
-          </li>
-          <li class="nav-item mx-0 mx-lg-1">
-            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="http://127.0.0.1:8000/foro/">FORO</a>
+            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{% url 'lista_post'  %}">FORO</a>
           </li>
         </ul>
       </div>
     </div>
   </nav>
-
-  <!-- Masthead -->
   
-  
-  <!-- Portfolio Section -->
-  <section class="page-section portfolio" id="post">
-    <div class="container">
-
-      <!-- Portfolio Section Heading -->
-      <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">{{ post.descripcion }}</h2>
-
-      <!-- Icon Divider -->
-      <div class="divider-custom">
-        <div class="divider-custom-line"></div>
-        <div class="divider-custom-icon">
-          <i class="fas fa-heart"></i>
-        </div>
-        <div class="divider-custom-line"></div>
-      </div>
-
-      <!-- Portfolio Grid Items -->
+  <header>
+    <section class="page-section portfolio" id="post">
       <div class="row">
-
-        <!-- ROW de POST -->
-        <!-- Portfolio Item 1 texto -->
-        <div class="col-md-6 col-lg-4">
-          <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal1">
-            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-              <div class="portfolio-item-caption-content text-center text-white">
-                <i class="fas fa-heart fa-3x"></i>
-              </div>
+        <div class="col-2">
+          <div id="list-post" class="list-group">
+            <a class="list-group-item list-group-item-action" href="#list-descripcion">Descripcion</a>
+            <a class="list-group-item list-group-item-action" href="#list-imagen">Imagen</a>
+            <a class="list-group-item list-group-item-action" href="#list-texto">Texto</a>
+            <a class="list-group-item list-group-item-action" href="#list-autor">Autor</a>
+            <a class="list-group-item list-group-item-action" href="#list-creado">Fecha</a>
+            <div class="fb-comments" 
+              data-href="{% url 'detalle_post' post.url %}" 
+              data-width="" 
+              data-numposts="5">
             </div>
-            <p>texto</p>
           </div>
         </div>
-
-        <!-- Portfolio Item 2 autor -->
-        <div class="col-md-6 col-lg-4">
-          <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal2">
-            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-              <div class="portfolio-item-caption-content text-center text-white">
-                <i class="fas fa-heart fa-3x"></i>
-              </div>
-            </div>
-            autor
+        <div class="col">
+          <div data-spy="scroll" data-target="#list-post" data-offset="0" class="scrollspy-post">
+            <h4 id="list-descripcion">Descripcion</h4>
+            <p>{{ post.descripcion }}</p>
+            <h4 id="list-imagen">Imagen</h4>
+            <img src="{{ post.imagen }}" class="img-fluid" alt="Responsive image">
+            <h4 id="list-texto">Texto</h4>
+            {{ post.texto | linebreaks }}
+            <h4 id="list-autor">Autor</h4>
+            <p>{{ post.autor }}</p>
+            <h4 id="list-creado">Fecha</h4>
+            <p>{{ post.creado }}</p>
           </div>
         </div>
-
-        <!-- Portfolio Item 3 fecha creado-->
-        <div class="col-md-6 col-lg-4">
-          <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal3">
-            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-              <div class="portfolio-item-caption-content text-center text-white">
-                <i class="fas fa-heart fa-3x"></i>
-              </div>
-            </div>
-            fecha creado
-          </div>
-        </div>
-
-        
       </div>
-      <!-- /.row -->
+    </section>
+  </header>
 
-    </div>
-  </section>
-
-
-  <style>
-    body {
-      background-color: #f7be72;
-    }
-    </style>
-
+  <style>body {background-color: #f7be72;}</style>
 
   <!-- Footer -->
   <footer class="footer text-center">
@@ -157,15 +132,12 @@
         <div class="col-lg-4">
           <h4 class="text-uppercase mb-4">Contacto</h4>
           <p class="lead mb-0">
-            Contacto
             Llámanos al (011) 4834-1500
             info@lalcec.org.ar
             
             Lunes a Viernes 8:00 a 19:00hs
             
-            Aráoz 2380, CABA, Argentina
-            
-            ​</p>
+            Aráoz 2380, CABA, Argentina​</p>
         </div>
 
       </div>
@@ -176,6 +148,19 @@
   <section class="copyright py-4 text-center text-white">
     <div class="container">
       <small>LALCEC &copy; Informatorio 2022</small>
+      <div class="badge-base LI-profile-badge" 
+        data-locale="es_ES" 
+        data-size="medium" 
+        data-theme="light" 
+        data-type="VERTICAL" 
+        data-vanity="dario-ricardo-romero" 
+        data-version="v1">
+          <a class="badge-base__link LI-simple-link" 
+            href="https://ar.linkedin.com/in/dario-ricardo-romero?trk=profile-badge">
+              Dario Romero
+          </a>
+      </div>
+              
     </div>
   </section>
 
@@ -184,128 +169,8 @@
     <a class="js-scroll-trigger d-block text-center text-white rounded" href="#page-top">
       <i class="fa fa-chevron-up"></i>
     </a>
-  </div>
+  </div> 
 
-  <!-- Portfolio Modals -->
-
-  <!-- Portfolio Modal 1 texto -->
-  <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-labelledby="portfolioModal1Label" aria-hidden="true">
-    <div class="modal-dialog modal-xl" role="document">
-      <div class="modal-content">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">
-            <i class="fas fa-times"></i>
-          </span>
-        </button>
-        <div class="modal-body text-center">
-          <div class="container">
-            <div class="row justify-content-center">
-              <div class="col-lg-8">
-                <!-- Portfolio Modal - titulo -->
-                <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">texto</h2>
-                <!-- Icon Divider -->
-                <div class="divider-custom">
-                  <div class="divider-custom-line"></div>
-                  <div class="divider-custom-icon">
-                    
-                  </div>
-                  <div class="divider-line"></div>
-                </div>
-                
-                <p class="mb-5">{{ post.texto | linebreaks }}</p>
-                
-                <!--Boton al link de la pagina-->
-                <form>
-                  <a href="">
-                    <input type="button" class="btn btn-primary" value="{{ post.autor }}     {{ post.categoria }}">
-                  </a>
-                </form>
-
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
- <!-- Portfolio Modal 2 autor -->
-  <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-labelledby="portfolioModal2Label" aria-hidden="true">
-    <div class="modal-dialog modal-xl" role="document">
-      <div class="modal-content">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">
-            <i class="fas fa-times"></i>
-          </span>
-        </button>
-        <div class="modal-body text-center">
-          <div class="container">
-            <div class="row justify-content-center">
-              <div class="col-lg-8">
-                <!-- Portfolio Modal - Title -->
-                <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Autor</h2>
-                <!-- Icon Divider -->
-                <div class="divider-custom">
-                  <div class="divider-custom-line"></div>
-                  <div class="divider-custom-icon">
-                  
-                  </div>
-                  <div class="divider-line"></div>
-                </div>
-                <!-- Portfolio Modal - Image -->
-                <img class="img-fluid rounded mb-5" src="static/img/portfolio/cancercolon.png" alt="">
-                <!-- Portfolio Modal - Text -->
-                <p class="mb-5">{{ post.autor }}</p>
-
-                  <!--Boton al link de la pagina-->
-                  <form>
-                    <a href="">
-                      <input type="button" class="btn btn-primary" value="puede llevar al perfil social">
-                    </a>
-                  </form>
-                
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-<!-- Portfolio Modal 3 fecha creado-->
-<div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-labelledby="portfolioModal3Label" aria-hidden="true">
-  <div class="modal-dialog modal-xl" role="document">
-    <div class="modal-content">
-      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-        <span aria-hidden="true">
-          <i class="fas fa-times"></i>
-        </span>
-      </button>
-      <div class="modal-body text-center">
-        <div class="container">
-          <div class="row justify-content-center">
-            <div class="col-lg-8">
-              <!-- Portfolio Modal - Title -->
-              <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Fecha Creado</h2>
-              <!-- Icon Divider -->
-              <div class="divider-custom">
-                <div class="divider-custom-line"></div>
-                <div class="divider-custom-icon">
-                 
-                </div>
-                <div class="divider-line"></div>
-              </div>
-               <!-- Portfolio Modal - Text -->
-              <p class="mb-5">{{ post.creado }}</p>
-                                  
-
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
     
   <!-- Bootstrap core JavaScript -->
   <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
