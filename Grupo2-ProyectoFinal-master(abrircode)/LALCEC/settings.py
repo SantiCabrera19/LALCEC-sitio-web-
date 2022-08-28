@@ -88,9 +88,9 @@ WSGI_APPLICATION = 'lalcec.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'lalcec',
+        'NAME': 'OnePiece',
         'USER': 'postgres',
-        'PASSWORD': 'dario2022',
+        'PASSWORD': 'mane123',
         'HOST': 'localhost',
         'PORT': '5432',
     }
