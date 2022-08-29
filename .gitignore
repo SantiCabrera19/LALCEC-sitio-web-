@@ -6,3 +6,4 @@ prueba/
 __pycache__
 db.sqlite3
 media
+migrations
