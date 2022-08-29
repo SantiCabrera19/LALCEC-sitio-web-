@@ -32,6 +32,7 @@ urlpatterns = [
     path('foro/', views.index7, name='lista_post'),
     path('post/<slug:url>/', views.DetallePost.as_view(), name='detalle_post'),
     path('accounts/', include('allauth.urls')),
+    path('accounts/profile', views.profile),
 ]
 urlpatterns += staticfiles_urlpatterns()
 

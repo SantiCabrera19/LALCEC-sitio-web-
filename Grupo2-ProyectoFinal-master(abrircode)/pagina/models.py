@@ -2,6 +2,7 @@ from django.db import models
 from ckeditor.fields import RichTextField
 from django.db import models
 from django import forms
+from django.contrib.auth.models import User
 from django.utils import timezone
 from django.utils.text import slugify
 
@@ -79,4 +80,11 @@ class Comentario(models.Model):
     def __str__(self):
         return self.nombre
 
+
+class Perfil(models.Model):
+    user = models.OneToOneField(User, null=True, on_delete=models.CASCADE)
+    bio = models.TextField()
+
+    def __str__(self):
+        return str(self.user)
 # Create your models here.

@@ -13,5 +13,6 @@ class AutorAdmin(admin.ModelAdmin):
 admin.site.register(Categoria, CategoriaAdmin)
 admin.site.register(Autor, AutorAdmin)
 admin.site.register(Post)
+admin.site.register(Perfil)
 
 # Register your models here.

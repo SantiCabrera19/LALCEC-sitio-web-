@@ -35,6 +35,7 @@ def index7(request):
     print(Post)
     return render(request, "pagina/indexpost.html",{"posts":posts})
 
+
 class DetallePost(DetailView):
     """Detalle del  post."""
     template_name = 'post.html'
@@ -42,3 +43,6 @@ class DetallePost(DetailView):
     context_object_name = 'post'
     slug_field = 'url'
     slug_url_kwarg = 'url'
+
+def profile(request):
+    return render(request, "pagina/account/profile.html")
