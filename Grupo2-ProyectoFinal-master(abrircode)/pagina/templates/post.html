@@ -1,6 +1,6 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es_AR">
 <head>
 
   <meta charset="utf-8">
@@ -26,8 +26,8 @@
   <!--scrip para comentario facebook-->
   <div id="fb-root"></div>
   <script async defer crossorigin="anonymous" 
-    src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v14.0&appId=638697580937814&autoLogAppEvents=1" 
-    nonce="dxHfHo3Q">
+    src="https://connect.facebook.net/es_AR/sdk.js#xfbml=1&version=v14.0&appId=638697580937814&autoLogAppEvents=1" 
+    nonce="E3KJe0eq">
   </script>
 
   <!-- Navigation -->
@@ -63,17 +63,25 @@
   <header>
     <section class="page-section portfolio" id="post">
       <div class="row">
-        <div class="col-2">
-          <div id="list-post" class="list-group">
-            <a class="list-group-item list-group-item-action" href="#list-descripcion">Descripcion</a>
-            <a class="list-group-item list-group-item-action" href="#list-imagen">Imagen</a>
-            <a class="list-group-item list-group-item-action" href="#list-texto">Texto</a>
-            <a class="list-group-item list-group-item-action" href="#list-autor">Autor</a>
-            <a class="list-group-item list-group-item-action" href="#list-creado">Fecha</a>
-            <div class="fb-comments" 
-              data-href="locahost:8000/post/{{post.url}}" 
-              data-width="" 
-              data-numposts="5">
+        <div class="col-4-md-auto">
+          <div class="row">
+            <div class="col">
+              <div id="list-post" class="list-group">
+                <a class="list-group-item list-group-item-action" href="#list-descripcion">Descripcion</a>
+                <a class="list-group-item list-group-item-action" href="#list-imagen">Imagen</a>
+                <a class="list-group-item list-group-item-action" href="#list-texto">Texto</a>
+                <a class="list-group-item list-group-item-action" href="#list-autor">Autor</a>
+                <a class="list-group-item list-group-item-action" href="#list-creado">Fecha</a>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <div class="fb-comments" 
+                data-href="http://127.0.0.1:8000/foro/{{ post.url }}" 
+                data-width="200" 
+                data-numposts="5">
+              </div>
             </div>
           </div>
         </div>
