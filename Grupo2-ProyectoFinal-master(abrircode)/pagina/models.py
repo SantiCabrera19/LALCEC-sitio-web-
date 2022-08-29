@@ -38,16 +38,17 @@ class Autor(models.Model):
 
 class Post(models.Model):
     id = models.AutoField(primary_key=True)
-    titulo = models.CharField('Titulo', max_length=90, blank=False, null=False)
+    titulo = models.CharField('Titulo', max_length= 255)
+    url = models.SlugField(max_length = 255, unique= True)
     descripcion = models.CharField('Descripcion', max_length=100, blank=False, null=False)
-    Texto=RichTextField()
-    imagen = models.URLField(max_length=255, blank=False, null=False)
+    texto=RichTextField()
+    imagen = models.URLField(max_length=257, blank=False, null=False)
     autor = models.ForeignKey(Autor, on_delete = models.CASCADE)
-    Categoria = models.ForeignKey(Categoria, on_delete = models.CASCADE)
+    categoria = models.ForeignKey(Categoria, on_delete = models.CASCADE)
     estado = models.BooleanField('Publicado/No Publicado', default=True)
-    fecha_publicacion = models.DateField('Fecha de Publicacion', auto_now_add = True)
+    creado = models.DateField('Fecha Creado', auto_now =False, auto_now_add = True)
 
-
+# idi
 
     class Meta:
         verbose_name = 'Post'
@@ -56,7 +57,11 @@ class Post(models.Model):
     def __str__(self):
         return self.titulo
 
-    
+    def save(self, *args, **kwargs):
+        self.url = slugify(self.titulo)
+        super(Post, self).save(*args, **kwargs)
+
+
 
 class Comentario(models.Model):
     id = models.AutoField(primary_key=True)
