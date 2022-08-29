@@ -48,6 +48,7 @@ class Post(models.Model):
     estado = models.BooleanField('Publicado/No Publicado', default=True)
     creado = models.DateField('Fecha Creado', auto_now =False, auto_now_add = True)
 
+# idi
 
     class Meta:
         verbose_name = 'Post'
@@ -59,6 +60,8 @@ class Post(models.Model):
     def save(self, *args, **kwargs):
         self.url = slugify(self.titulo)
         super(Post, self).save(*args, **kwargs)
+
+
 
 class Comentario(models.Model):
     id = models.AutoField(primary_key=True)
