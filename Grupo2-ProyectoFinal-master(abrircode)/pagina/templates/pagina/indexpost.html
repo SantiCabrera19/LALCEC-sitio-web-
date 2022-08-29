@@ -1,6 +1,6 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es_AR">
 
 <head>
 
@@ -23,11 +23,11 @@
 
 
 <body id="page-top">
-  {% load static %}
+  
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
     <div class="container">
-      <a class="navbar-brand js-scroll-trigger" href="http://127.0.0.1:8000"><img src="{% static '/img/avataarsnobg.png' %}" width="140" height="60"alt="icono"></a>
+      <a class="navbar-brand js-scroll-trigger" href="{% url 'inicio'  %}"><img src="{% static '/img/avataarsnobg.png' %}" width="140" height="60"alt="icono"></a>
       <button class="navbar-toggler navbar-toggler-right text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         Menu
         <i class="fas fa-bars"></i>
@@ -35,13 +35,13 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item mx-0 mx-lg-1">
-            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="http://127.0.0.1:8000">INICIO</a>
+            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{% url 'inicio'  %}">INICIO</a>
           </li>
           <li class="nav-item mx-0 mx-lg-1">
             <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="http://127.0.0.1:8000/accounts/logout/">CERRAR SESION</a>
           </li>
           <li class="nav-item mx-0 mx-lg-1">
-            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="http://127.0.0.1:8000/foro/"><img src="{% static 'img/fotoperfil5nobg.png' %}"></a>
+            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{% url 'lista_post'  %}"><img src="{% static 'img/fotoperfil5nobg.png' %}"></a>
           </li>
         </ul>
       </div>
@@ -50,47 +50,44 @@
 
   <!-- Masthead -->
   <header class="masthead text-black">
-
     <div class="container px-4 px-lg-5">
       <div class="row gx-5 gx-lg-5 justify-content-center">
-          <div class="col-md-10 col-lg-8 col-xl-7">
-              <!-- Post preview-->
-
-            
-           
-
-
-              {% if posts %}
-                {% for post in posts %}
-                  <div class="post-preview">
-                    <a href="{% url 'detalle_post' post.url %}">
-                      <h2 class="post-title">
-                        {{ post.titulo }}
-                      </h2>
-                    </a>
-                    <h3 class="post-subtitle">
-                      {{ post.descripcion }}
-                    </h3>
-                    <p class="post-meta">
-                        Publicado por
-                        <strong>{{ post.autor }}</strong>
-                        {{ post.creado }}
-                    </p>
-                  </div>
-                {% endfor %} 
-              {% else %}
-              {% endif %}
-              <!-- Divider-->
-              <hr class="my-4" />
-              <!-- Pager-->
-              <div class="d-flex justify-content-end mb-4"><a class="btn btn-primary text-uppercase" href="#!">Post anteriores →</a></div>
+        <div class="col-md-10 col-lg-8 col-xl-7">
+          <!-- Post preview-->     
+          {% if posts %}
+            {% for post in posts %}
+              <div class="post-preview">
+                <a href="{% url 'detalle_post' post.url %}">
+                  <h2 class="post-title">
+                    {{ post.titulo }}
+                  </h2>
+                </a>
+                <h3 class="post-subtitle">
+                  {{ post.descripcion }}
+                </h3>
+                <p class="post-meta">
+                  Publicado por
+                  <strong>{{ post.autor }}</strong>
+                  {{ post.creado }}
+                </p>
+              </div>
+            {% endfor %} 
+          {% else %}
+          {% endif %}
+          <!-- Divider-->
+          <hr class="my-4" />
+          <!-- Pager-->
+          <div class="d-flex justify-content-end mb-4">
+            <a class="btn btn-primary text-uppercase" href="#!">
+              Post anteriores →
+            </a>
           </div>
+        </div>
       </div>
-  </div>
-
+    </div>
   </header>
 
-  
+  <style>body {background-color: #f7be72;}</style>
  
   <!-- Footer -->
   <footer class="footer text-center">
