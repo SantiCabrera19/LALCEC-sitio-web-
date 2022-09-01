@@ -5,11 +5,11 @@
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
+  <meta name="description" content="LALCEC">
+  <meta name="author" content="DAR">
 
   <title>{{ post.titulo }}</title>
-
+  <link rel="icon" type="image/x-icon" href="{% static 'img/favicon.ico' %}">
   <!-- Custom fonts for this theme -->
   <link href="{% static 'vendor/fontawesome-free/css/all.min.css' %}" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
@@ -59,95 +59,76 @@
       </div>
     </div>
   </nav>
-  
-  <header>
-    <section class="page-section portfolio" id="post">
-      <div class="row">
-        <div class="col-4-md-auto">
-          <div class="row">
-            <div class="col">
-              <div id="list-post" class="list-group">
-                <a class="list-group-item list-group-item-action" href="#list-descripcion">Descripcion</a>
-                <a class="list-group-item list-group-item-action" href="#list-imagen">Imagen</a>
-                <a class="list-group-item list-group-item-action" href="#list-texto">Texto</a>
-                <a class="list-group-item list-group-item-action" href="#list-autor">Autor</a>
-                <a class="list-group-item list-group-item-action" href="#list-creado">Fecha</a>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col">
-              <div class="fb-comments" 
-                data-href="http://127.0.0.1:8000/foro/{{ post.url }}" 
-                data-width="200" 
-                data-numposts="5">
-              </div>
-            </div>
+
+  <header class="masthead bg-primary text-white text-center">
+    <h1 class="masthead-heading text-uppercase mb-0">{{ post.titulo }}</h1>
+  </header>
+
+  <section class="page-section portfolio" id="post">
+    <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">{{ post.descripcion }}</h2>
+    <!-- Icon Divider -->
+    <div class="divider-custom">
+      <div class="divider-custom-line"></div>
+      <div class="divider-custom-icon">
+        <i class="fas fa-heart"></i>
+      </div>
+      <div class="divider-custom-line"></div>
+    </div>
+    <div class="row">
+      <div class="col-8">
+        
+        <div class="media">
+          <img src="{{ post.imagen }}" class="img-fluid" alt="Responsive image">
+        </div>
+        <div class="media">
+          <div class="media-body">
+            {{ post.texto }}
           </div>
         </div>
-        <div class="col">
-          <div data-spy="scroll" data-target="#list-post" data-offset="0" class="scrollspy-post">
-            <h4 id="list-descripcion">Descripcion</h4>
-            <p>{{ post.descripcion }}</p>
-            <h4 id="list-imagen">Imagen</h4>
-            <img src="{{ post.imagen }}" class="img-fluid" alt="Responsive image">
-            <h4 id="list-texto">Texto</h4>
-            {{ post.texto | linebreaks }}
-            <h4 id="list-autor">Autor</h4>
-            <p>{{ post.autor }}</p>
-            <h4 id="list-creado">Fecha</h4>
-            <p>{{ post.creado }}</p>
-          </div>
+        <h4 class="text-uppercase">Autor: {{ post.autor }}</h4>
+        <h4 class="text-uppercase">Publicado: {{ post.creado }}</h4>          
+      </div>
+      <div class="col-4">
+        <div class="fb-comments" 
+          data-href="http://127.0.0.1:8000/foro/{{ post.url }}" 
+          data-width="200" 
+          data-numposts="5">
         </div>
       </div>
-    </section>
-  </header>
+    </div>
+  </section>
+
 
   <style>body {background-color: #f7be72;}</style>
 
   <!-- Footer -->
   <footer class="footer text-center">
     <div class="container">
+      <h2 class="text-uppercase mb-4">filial: Presidencia Roque Saenz Peña, Chaco</h2>
       <div class="row">
-
         <!-- Footer Location -->
         <div class="col-lg-4 mb-5 mb-lg-0">
           <h4 class="text-uppercase mb-4">Direccion</h4>
-          <p class="lead mb-0">Aráoz 2380, CABA, Argentina
-            <br>Lunes a Viernes 8:00 a 19:00hs</p>
+          <p class="lead mb-0">Dorrego 478
+            <br>Lunes a Viernes 8:00 a 12:00hs</p>
         </div>
-
         <!-- Footer Social Icons -->
         <div class="col-lg-4 mb-5 mb-lg-0">
           <h4 class="text-uppercase mb-4">Redes Sociales</h4>
-          <a class="btn btn-outline-light btn-social mx-1" href="https://www.facebook.com/LALCECARGENTINA/">
+          <a class="btn btn-outline-light btn-social mx-1" href="https://www.facebook.com/LALCECHACO/">
             <i class="fab fa-fw fa-facebook-f"></i>
           </a>
-          <a class="btn btn-outline-light btn-social mx-1" href="https://twitter.com/lalcecargentina">
-            <i class="fab fa-fw fa-twitter"></i>
-          </a>
-          <a class="btn btn-outline-light btn-social mx-1" href="https://www.linkedin.com/company/lalcecargentina/?originalSubdomain=ar">
-            <i class="fab fa-fw fa-linkedin-in"></i>
-          </a>
-          <a class="btn btn-outline-light btn-social mx-1" href="https://www.youtube.com/user/lalcecargentina">
-            <i class="fab fa-fw fa-youtube"></i>
-          </a>
-          <a class="btn btn-outline-light btn-social mx-1" href="https://donaronline.org/lalcec/dia-mundial-contra-el-cancer">
-            <i class="fas fa-donate"></i>
+          <a class="btn btn-outline-light btn-social mx-1" href="https://www.instagram.com/lalcecspchaco/">
+            <i class="fab fa-fw fa-instagram"></i>
           </a>
         </div>
-
         <div class="col-lg-4">
           <h4 class="text-uppercase mb-4">Contacto</h4>
           <p class="lead mb-0">
-            Llámanos al (011) 4834-1500
-            info@lalcec.org.ar
-            
-            Lunes a Viernes 8:00 a 19:00hs
-            
-            Aráoz 2380, CABA, Argentina​</p>
+            (0364) 410-5595
+            lalcecspchaco@gmail.com
+          </p>
         </div>
-
       </div>
     </div>
   </footer>
