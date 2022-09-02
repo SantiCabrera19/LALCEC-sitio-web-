@@ -1,10 +1,10 @@
 from django.db import models
-from ckeditor.fields import RichTextField
 from django.db import models
 from django import forms
 from django.contrib.auth.models import User
 from django.utils import timezone
 from django.utils.text import slugify
+
 
 
 class Categoria(models.Model):
@@ -42,7 +42,7 @@ class Post(models.Model):
     titulo = models.CharField('Titulo', max_length= 255)
     url = models.SlugField(max_length = 255, unique= True)
     descripcion = models.CharField('Descripcion', max_length=100, blank=False, null=False)
-    texto=RichTextField()
+    texto=models.TextField()
     imagen = models.URLField(max_length=257, blank=False, null=False)
     autor = models.ForeignKey(Autor, on_delete = models.CASCADE)
     categoria = models.ForeignKey(Categoria, on_delete = models.CASCADE)
