@@ -3,7 +3,7 @@
 **INTEGRANTES:**
 
 - [Santiago Cabrera](https://github.com/SantiCabrera19)
-- [Marlenei](https://github.com/drr2021)
+- [Dario Romero](https://github.com/drr2021)
 
 
 **Link al video:** 
