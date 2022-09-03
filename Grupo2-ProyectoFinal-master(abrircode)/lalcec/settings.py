@@ -40,7 +40,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.sites',
     'pagina.apps.PaginaConfig', 
-    'ckeditor',
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
