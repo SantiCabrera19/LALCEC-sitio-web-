@@ -29,7 +29,7 @@ urlpatterns = [
     path('pulmon/', views.Pulmon, name = 'pulmon'),
     path('piel/', views.Piel, name = 'piel'),
     path('prostata/', views.Prostata, name = 'prostata'),
-    path('foro/', views.index7, name='lista_post'),
+    path('foro/', views.listarPost.as_view(), name='lista_post'),
     path('post/<slug:url>/', views.DetallePost.as_view(), name='detalle_post'),
     path('accounts/', include('allauth.urls')),
     path('accounts/profile', views.profile),

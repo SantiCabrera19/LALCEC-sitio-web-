@@ -7,7 +7,7 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import logout
 from django.contrib.auth.forms import AuthenticationForm
 from .models import Post
-from django.views.generic import DetailView
+from django.views.generic import DetailView, ListView
 
 def Home(request):
     return render(request, "pagina/Home.html")
@@ -30,10 +30,13 @@ def Piel(request):
 def Prostata(request):
     return render(request, "pagina/Prostata.html")
 
-def index7(request):
-    posts = Post.objects.filter(estado = True)
-    print(Post)
-    return render(request, "pagina/indexpost.html",{"posts":posts})
+
+class listarPost(ListView):
+    """Listado de los post"""
+    template_name = 'indexpost.html'
+    model = Post
+    queryset = Post.objects.filter(estado = True).order_by('-creado')
+    paginate_by = 5
 
 
 class DetallePost(DetailView):
