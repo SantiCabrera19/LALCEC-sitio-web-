@@ -42,7 +42,7 @@
             <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="http://127.0.0.1:8000/accounts/logout/">CERRAR SESION</a>
           </li>
           <li class="nav-item mx-0 mx-lg-1">
-            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{% url 'lista_post'  %}"><img src="{% static 'img/fotoperfil5nobg.png' %}"></a>
+            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{% url 'lista_post'  %}"><img src="{% static 'img/fotoperfil5nobg.png' %}" width="40" height="40"></a>
           </li>
         </ul>
       </div>
@@ -55,8 +55,8 @@
       <div class="row gx-5 gx-lg-5 justify-content-center">
         <div class="col-md-10 col-lg-8 col-xl-7">
           <!-- Post preview-->     
-          {% if posts %}
-            {% for post in posts %}
+          {% if post_list %}
+            {% for post in post_list %}
               <div class="post-preview">
                 <a href="{% url 'detalle_post' post.url %}">
                   <h2 class="post-title">
@@ -73,14 +73,29 @@
               </div>
             {% endfor %} 
           {% else %}
+          <h2 class="text-uppercase mb-4">no hay lista de post</h2>
           {% endif %}
           <!-- Divider-->
           <hr class="my-4" />
           <!-- Pager-->
           <div class="d-flex justify-content-end mb-4">
-            <a class="btn btn-primary text-uppercase" href="#!">
-              Post anteriores →
-            </a>
+            {% block pagination %}
+              {% if is_paginated %}
+                <div class="pagination">
+                    <span class="page-links">
+                        {% if page_obj.has_previous %}
+                          <a class="btn btn-primary text-uppercase" href="{{ request.path }}?page={{ page_obj.previous_page_number }}"> Post nuevos</a>
+                        {% endif %}
+                        <span class="page-current">
+                          Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+                        </span>
+                        {% if page_obj.has_next %}
+                          <a class="btn btn-primary text-uppercase" href="{{ request.path }}?page={{ page_obj.next_page_number }}">Post anteriores →</a>
+                        {% endif %}
+                    </span>
+                </div>
+              {% endif %}
+            {% endblock %} 
           </div>
         </div>
       </div>
