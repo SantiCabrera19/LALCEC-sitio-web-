@@ -1,15 +1,17 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="es_AR">
+<html lang="es">
+
 <head>
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="LALCEC">
-  <meta name="author" content="DAR">
+  <meta name="description" content="">
+  <meta name="author" content="">
 
   <title>{{ post.titulo }}</title>
   <link rel="icon" type="image/x-icon" href="{% static 'img/favicon.ico' %}">
+
   <!-- Custom fonts for this theme -->
   <link href="{% static 'vendor/fontawesome-free/css/all.min.css' %}" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
@@ -74,21 +76,19 @@
       </div>
       <div class="divider-custom-line"></div>
     </div>
-    <div class="row">
-      <div class="col-8">
+    <div class="row justify-content-md-center">
+      <div class="col col-md-7">
         
         <div class="media">
           <img src="{{ post.imagen }}" class="img-fluid" alt="Responsive image">
         </div>
         <div class="media">
-          <h4 class="text-uppercase">
-            {{ post.texto }}
-          </h4>
+          <p>{{ post.texto | linebreaks }}</p>
         </div>
         <h4 class="text-uppercase">Autor: {{ post.autor }}</h4>
         <h4 class="text-uppercase">Publicado: {{ post.creado }}</h4>          
       </div>
-      <div class="col-4">
+      <div class="col col-md-4">
         <div class="fb-comments" 
           data-href="http://127.0.0.1:8000/foro/{{ post.url }}" 
           data-width="200" 
