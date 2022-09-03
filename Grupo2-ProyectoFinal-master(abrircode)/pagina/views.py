@@ -9,26 +9,26 @@ from django.contrib.auth.forms import AuthenticationForm
 from .models import Post
 from django.views.generic import DetailView
 
-def index(request):
-    return render(request, "pagina/index.html")
+def Home(request):
+    return render(request, "pagina/Home.html")
 
-def index1(request):
-    return render(request, "pagina/index1.html")
+def Mama(request):
+    return render(request, "pagina/Mama.html")
 
-def index2(request):
-    return render(request, "pagina/index2.html")
+def Utero(request):
+    return render(request, "pagina/Utero.html")
 
-def index3(request):
-    return render(request, "pagina/index3.html")
+def Colon(request):
+    return render(request, "pagina/Colon.html")
 
-def index4(request):
-    return render(request, "pagina/index4.html")
+def Pulmon(request):
+    return render(request, "pagina/Pulmon.html")
 
-def index5(request):
-    return render(request, "pagina/index5.html")
+def Piel(request):
+    return render(request, "pagina/Piel.html")
 
-def index6(request):
-    return render(request, "pagina/index6.html")
+def Prostata(request):
+    return render(request, "pagina/Prostata.html")
 
 def index7(request):
     posts = Post.objects.filter(estado = True)
