@@ -6,7 +6,7 @@
 - [Dario Romero](https://github.com/drr2021)
 
 
-**Link al video:** 
+**Link al video:** https://www.youtube.com/watch?v=y0uOUir3Oq8
 
 
 
